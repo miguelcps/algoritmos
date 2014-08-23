@@ -1,0 +1,26 @@
+
+#include <iostream>
+using namespace std;
+
+int dec2base(int n, int base);
+
+int main(void) {
+   int num,base;
+   cout <<"Introduce un numero entero : ";
+   cin >>num;
+   cout <<"Introduce la base para convertir el numero:";
+   cin >>base;
+   cout <<"El numero "<<num<<" en base 10 equivale al numero "<<
+   dec2base(num,base)<<" en base "<<base;
+ 
+}
+
+int dec2base(int n, int base) {
+   int n_base=0, coef=1;
+   while (n!=0) {
+      n_base+=coef*(n%base);
+      coef*=10;
+      n/=base;
+   }
+   return n_base;
+}
